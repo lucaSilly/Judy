@@ -26,6 +26,7 @@ tree = app_commands.CommandTree(client)
 @app_commands.checks.has_permissions(manage_messages = True)
 async def delete(interaction, number: int):
         #await interaction.message.delete()
+        #t
         deleted = await interaction.channel.purge(limit=number + 1)
         await interaction.response.send_message(f"{len(deleted)} messages supprimés",ephemeral=True)
 
